@@ -11,7 +11,7 @@ export default class App extends Component{
 		keyWord:'h' //关键词
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		axios.get('https://api.github.com/search/repositories',{params:{q:this.state.keyWord,sort:'stars'}}).then(
 			response => {
 				const {name,html_url} = response.data.items[0]
