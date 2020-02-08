@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Home from './components/home/home'
-import About from './components/about/about'
-import {Link,Route} from 'react-router-dom'
+import Home from './pages/home/home'
+import About from './pages/about/about'
+//import Demo from './pages/demo/demo'
+import {NavLink,Route,Redirect,Switch} from 'react-router-dom'
 
 export default class App extends Component {
 	render() {
@@ -15,15 +16,20 @@ export default class App extends Component {
 				<div className="row">
 					<div className="col-xs-2 col-xs-offset-2">
 						<div className="list-group">
-							<Link className="list-group-item" to="/about">About</Link>
-							<Link className="list-group-item" to="/home">Home</Link>
+							{/* 编写导航区域 */}
+							<NavLink className="list-group-item" activeClassName="active2" to="/about">About</NavLink>
+							<NavLink className="list-group-item" activeClassName="active2" to="/home">Home</NavLink>
 						</div>
 					</div>
 					<div className="col-xs-6">
 						<div className="panel">
 							<div className="panel-body">
-								<Route path="/about" component={About}/>
-								<Route path="/home" component={Home}/>
+								<Switch>
+									{/* 注册路由 */}
+									<Route path="/about" component={About}/>
+									<Route path="/home" component={Home}/>
+									<Redirect to="/about"/>
+								</Switch>
 							</div>
 						</div>
 					</div>
