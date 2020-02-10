@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript" >
+
+		function demo (a = '勤洗手'){
+			return (b) => a + b
+		}
+		let result = demo('尚硅谷')('多通风')
+		console.log(result);
+		/* let a = demo('尚硅谷')
+		let result = a('多通风')*/
+
+		const test1 = a => a + 1 
+		console.log(test1(1));
+
+		const test2 = a =>{ a + 1 } 
+		console.log(test2(1))
+
+		//const test = a => {return {n:1,m:a}} //该行代码与下面这行等价
+		const test3 = a => ({n:1,m:a})
+		let result = test3(2)
+		console.log(result);
+		
+
+	</script>
+	
+</body>
+</html>
